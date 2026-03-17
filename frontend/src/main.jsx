@@ -5,7 +5,7 @@ import GlobalState from './context/UserContext.jsx'
 import DashboardProvider from './context/DashboardContext.jsx'
 import TransactionState from './context/TransactionContext.jsx'
 
-export const server='http://localhost:5000'
+export const server='https://smart-expense-tracker-34uz.onrender.com'
 
 createRoot(document.getElementById('root')).render(
   <GlobalState>
