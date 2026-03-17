@@ -1,0 +1,185 @@
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #0f172a;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+/* LOGO */
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #38bdf8;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+
+/* HOVER UNDERLINE EFFECT */
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* AUTH BUTTONS */
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* LOGIN BUTTON */
+
+.auth-buttons a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+
+/* LOGIN */
+
+.auth-buttons a[href="/login"] {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.auth-buttons a[href="/login"]:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+
+/* SIGNUP */
+
+.auth-buttons a[href="/register"] {
+  background: #38bdf8;
+  color: black;
+}
+
+.auth-buttons a[href="/register"]:hover {
+  background: #0ea5e9;
+}
+
+
+/* PROFILE BUTTON */
+
+.profile-nav {
+  background: #1e293b;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.profile-nav:hover {
+  background: #334155;
+}
+
+
+/* LOGOUT BUTTON */
+
+.auth-buttons button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.auth-buttons button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+}
+
+.navbar {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+}
+
+.navbar::-webkit-scrollbar {
+  display: none; /* Chrome */
+}

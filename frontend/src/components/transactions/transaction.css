@@ -1,0 +1,634 @@
+/* ================================= */
+/* TRANSACTION PAGE */
+/* ================================= */
+.transaction-container {
+  padding: 30px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.transaction-container h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1e293b;
+}
+
+/* ================================= */
+/* TRANSACTION CARD */
+/* ================================= */
+.transaction-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+/* ================================= */
+/* SEARCH BAR */
+/* ================================= */
+.transaction-search-bar {
+  margin-bottom: 15px;
+}
+
+.transaction-search-bar input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: 0.2s;
+}
+
+.transaction-search-bar input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ================================= */
+/* CATEGORY FILTER */
+/* ================================= */
+.transaction-category-filter {
+  margin-bottom: 20px;
+}
+
+.transaction-category-filter select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+}
+
+/* ================================= */
+/* TABLE STYLING */
+/* ================================= */
+.transaction-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.transaction-card thead {
+  background: #f1f5f9;
+}
+
+.transaction-card th {
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  color: #334155;
+}
+
+.transaction-card td {
+  padding: 12px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.transaction-card tr:hover {
+  background: #f9fafb;
+}
+
+/* ================================= */
+/* ACTION ICONS */
+/* ================================= */
+.transaction-card td svg {
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.2s;
+}
+
+.transaction-card td svg:hover {
+  transform: scale(1.1);
+}
+
+/* ================================= */
+/* PAGINATION */
+/* ================================= */
+.transaction-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-pagination button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.transaction-pagination button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.transaction-pagination button:hover:not(:disabled) {
+  background: #1e40af;
+}
+
+/* ================================= */
+/* MODAL */
+/* ================================= */
+/* ================================= */
+/* MODAL OVERLAY */
+/* ================================= */
+
+.transaction-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ================================= */
+/* MODAL BOX */
+/* ================================= */
+.transaction-modal {
+  background: #ffffff;
+  width: 420px;
+  max-width: 95%;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box; /* IMPORTANT */
+}
+
+/* ================================= */
+/* TITLE */
+/* ================================= */
+.transaction-modal h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ================================= */
+/* INPUTS */
+/* ================================= */
+.transaction-modal input,
+.transaction-modal select,
+.transaction-modal textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box; /* FIXES BORDER TOUCH ISSUE */
+  transition: 0.2s ease;
+}
+
+.transaction-modal input:focus,
+.transaction-modal select:focus,
+.transaction-modal textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ================================= */
+/* BUTTON ROW */
+/* ================================= */
+.transaction-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ================================= */
+/* BUTTONS */
+/* ================================= */
+.transaction-modal button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.transaction-modal button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+.transaction-modal button:first-child:hover {
+  background: #1e40af;
+}
+
+.transaction-modal button:last-child {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.transaction-modal button:last-child:hover {
+  background: #cbd5e1;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+@media (max-width: 768px) {
+  .transaction-container {
+    padding: 20px;
+  }
+
+  .transaction-card th,
+  .transaction-card td {
+    font-size: 12px;
+  }
+
+  .transaction-modal {
+    width: 95%;
+  }
+}
+/* ================================= */
+/* TYPE TOGGLE */
+/* ================================= */
+.type-toggle {
+  display: inline-flex;
+  background: #e2e8f0;
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.type-toggle button {
+  padding: 8px 18px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: #334155;
+}
+
+.type-toggle button.active {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.type-toggle button:hover:not(.active) {
+  background: #cbd5e1;
+}
+
+/* ================================= */
+/* ACTION BUTTONS SECTION */
+/* ================================= */
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+/* GENERAL BUTTON STYLE */
+.buttons button,
+.upload-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+/* ADD MANUAL */
+.buttons button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+.buttons button:first-child:hover {
+  background: #1e40af;
+}
+
+/* AI PROMPT */
+.buttons button:nth-child(2) {
+  background: #10b981;
+  color: white;
+}
+
+.buttons button:nth-child(2):hover {
+  background: #059669;
+}
+
+/* UPLOAD BUTTON */
+.upload-btn {
+  background: #f59e0b;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-btn:hover {
+  background: #d97706;
+}
+
+.upload-btn input {
+  display: none;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+@media (max-width: 768px) {
+
+  .type-toggle {
+    width: 100%;
+  }
+
+  .type-toggle button {
+    flex: 1;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttons button,
+  .upload-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ================================= */
+/* PREVIEW MULTI-TRANSACTION MODAL */
+/* ================================= */
+
+/* Make preview modal wider */
+.transaction-modal.preview-modal {
+  width: 800px;
+  max-width: 95%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Preview list container */
+.preview-item {
+  display: grid;
+  grid-template-columns: 110px 110px 1fr 1fr 150px 80px;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: 0.2s ease;
+}
+
+.preview-item:hover {
+  background: #f1f5f9;
+}
+
+/* Inputs inside preview */
+.preview-item input,
+.preview-item select {
+  margin-bottom: 0 !important;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+/* Delete button */
+.preview-item button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.preview-item button:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Modal actions row */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Cancel button */
+.modal-actions button:first-child {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.modal-actions button:first-child:hover {
+  background: #cbd5e1;
+}
+
+/* Confirm button */
+.modal-actions button:last-child {
+  background: #2563eb;
+  color: white;
+}
+
+.modal-actions button:last-child:hover {
+  background: #1e40af;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+/* Scrollbar styling (modern look) */
+.transaction-modal.preview-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transaction-modal.preview-modal::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .preview-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .preview-item button {
+    grid-column: span 2;
+  }
+}
+
+/* ================================= */
+/* RESPONSIVE TABLE */
+/* ================================= */
+
+.transaction-card {
+  overflow-x: auto;
+}
+
+.transaction-card table {
+  min-width: 650px;
+}
+
+/* ================================= */
+/* TABLE MOBILE IMPROVEMENT */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+  .transaction-container h1 {
+    font-size: 22px;
+  }
+
+  /* search + filter stack */
+  .transaction-search-bar,
+  .transaction-category-filter {
+    width: 100%;
+  }
+
+  .transaction-category-filter select {
+    width: 100%;
+  }
+
+  /* table scroll */
+  .transaction-card {
+    overflow-x: auto;
+  }
+
+  .transaction-card table {
+    min-width: 600px;
+  }
+
+  /* pagination stack */
+  .transaction-pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .transaction-pagination button {
+    width: 100%;
+  }
+}
+
+/* ================================= */
+/* MOBILE MODAL */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+  .transaction-modal {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .transaction-modal h3 {
+    font-size: 18px;
+  }
+
+  .transaction-modal input,
+  .transaction-modal select {
+    font-size: 13px;
+  }
+
+  .transaction-modal-buttons {
+    flex-direction: column;
+  }
+
+  .transaction-modal-buttons button {
+    width: 100%;
+  }
+
+}
+
+/* ================================= */
+/* BUTTON SECTION MOBILE */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons button,
+  .upload-btn {
+    width: 100%;
+  }
+
+}
+
+/* ================================= */
+/* PREVIEW MODAL RESPONSIVE */
+/* ================================= */
+
+@media (max-width: 900px) {
+
+  .transaction-modal.preview-modal {
+    width: 95%;
+  }
+
+  .preview-item {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .preview-item button {
+    grid-column: span 2;
+  }
+
+}
+
+/* ================================= */
+/* VERY SMALL SCREEN */
+/* ================================= */
+
+@media (max-width: 300px) {
+
+  .transaction-container {
+    padding: 15px;
+  }
+
+  .type-toggle {
+    width: 100%;
+  }
+
+  .type-toggle button {
+    flex: 1;
+  }
+
+  .preview-item {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-item input,
+  .preview-item select {
+    width: 100%;
+  }
+
+  .preview-item button {
+    width: 100%;
+  }
+
+}
